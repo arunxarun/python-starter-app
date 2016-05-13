@@ -66,6 +66,24 @@
 	        <div id="service-buttons">
 	
 	        </div>
+	        
+	        <div id="services-howto_div" class="well off" style="display:none">
+                 <div class="alert alert-warning" role="alert">
+                     No <a href="" class="service">Services</a> have been created and bound to this app. 
+                 </div>
+                 <div>
+                     Assuming that a service has been enabled for this cluster by the administrator:
+                 </div>
+                 <pre>cf catalog enable [name of service from service catalog] &lt;optional name for enabled service in this cluster&gt; </pre>
+                 <div>
+                     Create and bind to one by following the steps below.
+                 </div>
+                 <pre>
+                 	cf create-service [name of service enabled in this cluster] [desired name of service instance in this space]
+                 	cf bind-service [service instance name in this space] [application name]
+                 </pre>
+             </div>
+	        
         </div>
         
         <h2>User-Provided Services<span style="padding-left:10px;font-size:.6em">(these are externally provisioned and enabled)</span></h2>

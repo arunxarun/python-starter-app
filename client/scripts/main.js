@@ -12,7 +12,7 @@ $(document).ready(function() {
             var obj = {};
         }
         
-        if(obj != null) {
+        if(obj != null && Object.keys(obj).length > 0) {
 	        for(var key in obj) {
 	        	if(key === "user-provided") {
 	        		continue;
@@ -24,6 +24,9 @@ $(document).ready(function() {
 	        	$("#"+key+"_div").hide();
 	        	$("#"+key+"_div").append("<pre>"+JSON.stringify(obj[key][0],null,"\t")+"</pre>");
 	        }
+        }
+        else {
+        	$("#services-howto_div").show();
         }
         
         // Populate user-provided services
@@ -72,6 +75,7 @@ $(document).ready(function() {
             // Will be great if we can also do "ifs" for individual attribute in the data object before assigning.
             $("a[class='kato']").attr('href', parsedData["KATO_TOOL"]);
             $("a[class='user-provided-service']").attr('href', parsedData["USER_SERVICE"]);
+            $("a[class='service']").attr('href', parsedData["SERVICE"]);
         }
     });
 });

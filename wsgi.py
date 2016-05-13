@@ -28,6 +28,7 @@ def getLinks():
     links = {
         "USER_SERVICE": os.getenv("USER_SERVICE"),
         "KATO_TOOL": os.getenv("KATO_TOOL"),
+        "SERVICE":os.getenv("SERVICE")
     }
     return json.dumps(links)
 
