@@ -19,3 +19,4 @@ applications:
   env:
     USER_SERVICE: https://docs.stackato.com/user/services/user-provided.html
     KATO_TOOL: https://docs.stackato.com/admin/reference/kato-ref.html#kato-command-ref-role-add
+    SERVICE: https://docs.stackato.com/user/services/data-services.html
