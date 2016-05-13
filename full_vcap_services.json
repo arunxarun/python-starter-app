@@ -126,6 +126,28 @@
 			}
 		}
 	],
+	"custom-mysql":
+	[
+		{
+			"name":"python-starter-app-custom-mysql-db",
+			"label":"mysql-5.5",
+			"tags":[],
+			"plan":"free",
+			"credentials":
+			{
+				"name":"mysql_java",
+				"hostname":"127.0.0.1",
+				"host":"127.0.0.1",
+				"port":3306,
+				"user":"dev",
+				"username":"dev",
+				"password":"devpass",
+				"uri":"mysql://dev:devpass@127.0.0.1:3306/mysql_java",
+				"jdbcUrl":"jdbc:mysql://dev:devpass@127.0.0.1:3306/mysql_java"
+			}
+		}
+	],
+	
 	"user-provided":
 	[
 		{

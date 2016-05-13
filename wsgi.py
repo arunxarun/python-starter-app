@@ -27,7 +27,7 @@ def getLinks():
     log.debug("retrieving links")
     links = {
         "USER_SERVICE": os.getenv("USER_SERVICE"),
-        "CF_MGMT_TOOL": os.getenv("CF_MGMT_TOOL"),
+        "KATO_TOOL": os.getenv("KATO_TOOL"),
     }
     return json.dumps(links)
 

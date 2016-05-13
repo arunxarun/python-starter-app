@@ -1,5 +1,5 @@
 applications:
-- name: python
+- name: python-starter-app
   memory: 128M
   services:
     ${name}-mysql-db:
@@ -17,5 +17,5 @@ applications:
 #    ${name}-memcached:
 #      type: memcached
   env:
-    USER_SERVICE: http://docs.hpcloud.com/#devplatform/2.0/helion/user/services/user-provided.html
-    CF_MGMT_TOOL: http://docs.hpcloud.com/#devplatform/2.0/helion/CLI/cfmgmt_growcluster_addservice.html
+    USER_SERVICE: https://docs.stackato.com/user/services/user-provided.html
+    KATO_TOOL: https://docs.stackato.com/admin/reference/kato-ref.html#kato-command-ref-role-add

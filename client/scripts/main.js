@@ -1,4 +1,4 @@
-var services = ["filesystem", "harbor", "memcached", "mongodb", "mysql", "postgresql", "rabbitmq3", "mssql2014"];
+var services = ["filesystem", "harbor", "memcached", "mongodb", "mysql", "postgresql", "rabbitmq3"];
 var serviceEnabled = [0,0,0,0,0,0,0,0];
 
 $(document).ready(function() {
@@ -11,32 +11,21 @@ $(document).ready(function() {
         else {
             var obj = {};
         }
-
-        services.forEach(function(value, index, array) {
-            if (obj && obj[value] != null) {
-                $("#als-service-buttons").append("<button id='" + value + "' class='btn btn-success togglebtn' type='button'>" + value + "</button>");
-	        $("#" + value + "_div").find("div.off").hide();
-	        $("#" + value + "_div").find("div.on").append("<pre>" + JSON.stringify(obj[value][0],null, "\t") + "</pre>");
-
-                console.log(value + " found");
-                serviceObjs = obj[value];
-
-                for (i = 0; i < serviceObjs.length; i++) {
-                    serviceEnabled[index] = 1;
-                    label = serviceObjs[i]['label'];
-                    console.log(label);
-                    name = serviceObjs[i]['name'];
-                    console.log(name);
-                    creds = serviceObjs[i]['credentials'];
-                }
-            }
-            else {
-                console.log(value + " not found");
-                $("#als-service-buttons").append("<button id='" + value + "' class='btn btn-default togglebtn' type='button'>" + value + "</button>");
-	        $("#" + value + "_div").find("div.on").hide();
-            }
-        });
-
+        
+        if(obj != null) {
+	        for(var key in obj) {
+	        	if(key === "user-provided") {
+	        		continue;
+	        	}
+	        	console.log(key + " found");
+	        	
+	        	$("#service-buttons").append("<button id='" + key + "' class='btn btn-success togglebtn' type='button'>" + key + "</button>");
+	        	$("#found_services").append("<div class='collapsediv well on' id='"+key+"_div'></div>");
+	        	$("#"+key+"_div").hide();
+	        	$("#"+key+"_div").append("<pre>"+JSON.stringify(obj[key][0],null,"\t")+"</pre>");
+	        }
+        }
+        
         // Populate user-provided services
         console.log(obj);
         console.log(obj['user-provided']);
@@ -81,7 +70,7 @@ $(document).ready(function() {
         var parsedData = $.parseJSON(data);
         if (data) {
             // Will be great if we can also do "ifs" for individual attribute in the data object before assigning.
-            $("a[class='cf-mgmt']").attr('href', parsedData["CF_MGMT_TOOL"]);
+            $("a[class='kato']").attr('href', parsedData["KATO_TOOL"]);
             $("a[class='user-provided-service']").attr('href', parsedData["USER_SERVICE"]);
         }
     });
