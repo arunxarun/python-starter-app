@@ -2,8 +2,8 @@ applications:
 - name: python-starter-app
   memory: 128M
   services:
-    ${name}-mysql-db:
-      type: mysql
+#    ${name}-mysql-db:
+#      type: mysql
 #    ${name}-postgres-db:
 #      type: postgresql
 #    ${name}-rabbitmq3:
