@@ -86,7 +86,7 @@ application.catchall = False
 
 # NOTE that these will default to rational values if not set for local run.
 
-assignedHost = os.getenv('VCAP_APP_HOST','127.0.0.1')
+assignedHost = os.getenv('VCAP_APP_HOST','0.0.0.0')
 assignedPort = os.getenv('VCAP_APP_PORT',8080)
 
 log.debug('launching application at %s:%s'%(assignedHost,assignedPort))
