@@ -1,7 +1,7 @@
 applications:
 - name: python-starter-app
   memory: 128M
-  services:
+#  services:
 #    ${name}-mysql-db:
 #      type: mysql
 #    ${name}-postgres-db:
