@@ -16,15 +16,15 @@
     <script src="/client/scripts/jquery-1.9.1.js"></script>
 
     <script src="/client/scripts/bootstrap.js"></script>
-   
-   
+
+
     <script src="/client/scripts/main.js"></script>
     <script src="/client/scripts/shCore.js"></script>
     <script src="/client/scripts/shBrushXml.js"></script>
     <script src="/client/scripts/shBrushPython.js"></script>
     <!--Font-->
     <link href="http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600" rel="stylesheet" type="text/css">
-    
+
 
 </head>
 <body>
@@ -56,26 +56,23 @@
                 </div>
             </div>
         </div>
-    </div>     
+    </div>
     <!-- MAIN NAVIGATION -->
-    <div class="container" style="margin-bottom:30px"> 
+    <div class="container" style="margin-bottom:30px">
         <h2>HCF Services<span style="padding-left:10px;font-size:.6em">(these are built into Helion Cloud Foundry and enabled by your admin)</span></h2>
-        
+
         <div id="found_services">
-        
+
 	        <div id="service-buttons">
-	
+
 	        </div>
-	        
+
 	        <div id="services-howto_div" class="well off" style="display:none">
                  <div class="alert alert-warning" role="alert">
-                     No <a href="" class="service">Services</a> have been created and bound to this app. 
+                     No <a href="" class="service">Services</a> have been created and bound to this app.
                  </div>
                  <div>
                      Assuming that a service has been enabled for this cluster by the administrator:
-                 </div>
-                 <pre>cf catalog enable [name of service from service catalog] &lt;optional name for enabled service in this cluster&gt; </pre>
-                 <div>
                      Create and bind to one by following the steps below.
                  </div>
                  <pre>
@@ -83,11 +80,11 @@
                  	cf bind-service [service instance name in this space] [application name]
                  </pre>
              </div>
-	        
+
         </div>
-        
+
         <h2>User-Provided Services<span style="padding-left:10px;font-size:.6em">(these are externally provisioned and enabled)</span></h2>
-        
+
         <div id="found_userprovided_services">
             <div id="userprovided-service-buttons">
 
@@ -98,14 +95,14 @@
                         <div class="alert alert-warning" role="alert">
                             No <a href="" class="user-provided-service">User Provided Services</a> have been created and bound to this app. Create and bind to one by following the steps below.
                         </div>
-                        <pre>stackato create-service user-provided [name of service]</pre>
-                        <p>The stackato CLI will prompt you to specify credential keys and values (note defaults of hostname, port, password):</p>
+                        <pre>cf create-user-provided-service [name of service]</pre>
+                        <p>The cf  CLI will prompt you to specify credential keys and values (note defaults of hostname, port, password):</p>
                         <pre>Which credentials to use for connections [hostname, port, password]:</pre>
                         <p>
                             You can override these defaults with your own credential keys, separate keys with commas, and the CLI will then prompt you for values of each credential key.<br />
                             When you've created your service, you need to bind it to specific applications
                         </p>
-                        <pre>stackato bind-service [service name] [application name]</pre>
+                        <pre>cf bind-service [service instance name in this space] [application name]</pre>
                     </div>
 
 
@@ -113,8 +110,8 @@
 
         </div>
 
-    </div>    
-   
+    </div>
+
 
 </body>
 </html>
